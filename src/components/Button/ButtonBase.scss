@@ -1,0 +1,69 @@
+
+:host{
+    --button-width: auto;
+    --button-height: 40px;
+    --button-background-color: #58abb1;
+    --button-color: #fff;
+    --button-padding:10px 25px ;
+    --button-margin: 15px 25px;
+    --button-font-weight: 700;
+    --button-text-transform: capitalize;
+    --button-font-family: inherit;
+    --button-border-radius: 4px;
+    --button-place-content: center;
+    --button-grid-columns: auto;
+    --button-background-highlight: #2A5DAF;
+    --button-color-highlight: #FFFFFF;
+    --button-box-shadow: ;
+    --button-border: ;
+    --button-border-highlight: ;
+    --icon-color: #fff;
+    --icon-highlight: #FFFFFF;
+    min-width: max-content;
+    display: block;
+    box-sizing: border-box;
+}
+button, a{
+    text-transform: var(--button-text-transform);
+    text-align: center;
+    align-items: center;
+    display: flex;
+    place-items: var(--button-place-content);
+    cursor: pointer;
+    padding: var(--button-padding);
+    color: var(--button-color);
+    font-weight: var(--button-font-weight);
+    background: var(--button-background-color);
+    transition: color 100ms ease-in-out, background 100ms ease-in-out;
+    border: var(--button-border, 1px solid transparent);
+    border-radius: var(--button-border-radius, 0);
+    width: fit-content;
+    grid-template-columns: var(--button-grid-columns);
+    place-content: center;
+    font-family: var(--button-font-family);
+    -webkit-border-radius: var(--button-border-radius, 0);
+    -moz-border-radius: var(--button-border-radius, 0);
+    -ms-border-radius: var(--button-border-radius, 0);
+    -o-border-radius: var(--button-border-radius, 0);
+}
+button:hover social-icon::part(icon),button:hover,
+button:focus social-icon::part(icon),button:focus{
+  fill: var(--icon-highlight);
+  color: var(--button-color-highlight);
+  background: var(--button-background-highlight);
+  border: var(--button-border-highlight, 1px solid transparent);
+}
+svg-component{
+    --path-fill: var(--icon-color);
+    --path-stroke: var(--icon-color);
+}
+button:hover svg-component,a:hover svg-component{
+  --path-fill: var(--icon-highlight);
+  --path-stroke: var(--icon-highlight);
+}
+button:hover svg-component:not([data-icon=“fb-icon”]), button:hover svg-component:not([data-icon=“linkedin-icon”]){
+  --path-stroke: var(--icon-highlight);
+}
+svg-component{
+  --svg-margin: 0 0 0 8px;
+}

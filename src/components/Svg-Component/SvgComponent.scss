@@ -1,0 +1,37 @@
+:host{
+                  display: inline-block;
+                  width:fit-content;
+                  margin: 0;
+                  padding: 0;
+                  border: none;
+                  box-sizing: border-box;
+                  --svg-cursor: pointer;
+                  --path-fill: ;
+                  --path-stroke: ;
+                  --svg-margin: 0;
+                  --svg-height: 20px;
+                  --svg-width: 20px;
+              }
+              use{
+                height:24px;
+                width: 24px;
+              }
+               svg{
+                   display:grid;
+                   place-self: center;
+                 height: var(--svg-height);
+                 width: var(--svg-width);
+                   margin: var(--svg-margin);
+                   cursor: var(svg-cursor);
+                   
+               }
+             
+              path.fill{
+                fill: var(--path-fill, #000000);
+              }
+              .stroke, g.stroke *, [stroke]{
+                  stroke: var(--path-stroke, #000000);
+              }
+            //   use{
+            //       stroke: var(--path-stroke);
+            //   }
