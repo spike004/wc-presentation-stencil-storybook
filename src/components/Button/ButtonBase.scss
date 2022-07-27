@@ -12,7 +12,7 @@
     --button-border-radius: 4px;
     --button-place-content: center;
     --button-grid-columns: auto;
-    --button-background-highlight: #2A5DAF;
+    --button-background-highlight: #77d9e0;
     --button-color-highlight: #FFFFFF;
     --button-box-shadow: ;
     --button-border: ;
@@ -33,9 +33,9 @@ button, a{
     padding: var(--button-padding);
     color: var(--button-color);
     font-weight: var(--button-font-weight);
-    background: var(--button-background-color);
+    background: var(--button-background-color, #fff);
     transition: color 100ms ease-in-out, background 100ms ease-in-out;
-    border: var(--button-border, 1px solid transparent);
+    border:  2px solid  var(--button-border, transparent);
     border-radius: var(--button-border-radius, 0);
     width: fit-content;
     grid-template-columns: var(--button-grid-columns);
@@ -45,17 +45,22 @@ button, a{
     -moz-border-radius: var(--button-border-radius, 0);
     -ms-border-radius: var(--button-border-radius, 0);
     -o-border-radius: var(--button-border-radius, 0);
+    -webkit-transition: color 100ms ease-in-out, background 100ms ease-in-out;
+    -moz-transition: color 100ms ease-in-out, background 100ms ease-in-out;
+    -ms-transition: color 100ms ease-in-out, background 100ms ease-in-out;
+    -o-transition: color 100ms ease-in-out, background 100ms ease-in-out;
 }
 button:hover social-icon::part(icon),button:hover,
 button:focus social-icon::part(icon),button:focus{
   fill: var(--icon-highlight);
   color: var(--button-color-highlight);
   background: var(--button-background-highlight);
-  border: var(--button-border-highlight, 1px solid transparent);
+  border: 2px solid  var(--button-border-highlight, transparent);
 }
-svg-component{
+svg-component,::slotted(svg-component){
     --path-fill: var(--icon-color);
     --path-stroke: var(--icon-color);
+    --svg-height: 15px;
 }
 button:hover svg-component,a:hover svg-component{
   --path-fill: var(--icon-highlight);

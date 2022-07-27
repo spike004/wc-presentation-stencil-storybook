@@ -1,0 +1,10 @@
+@mixin styleCard($card-content-align){
+    --card-content-align: $card-content-align;
+
+@if $card-content-align == 'flex-start'{
+}
+
+@if $card-content-align == 'center'{
+
+}
+}

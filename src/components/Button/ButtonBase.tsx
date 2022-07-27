@@ -21,9 +21,10 @@ export class ButtonBase {
 
 render() {
   let buttonContent = [this.text]
- console.log(this.el.style.setProperty('--button-background-color', this.bgColor || 'black'))
-
- console.log( this.el.style.setProperty('--button-background-highlight', this.bgHighlight || '#fff'))
+//  console.log(this.el.style.setProperty('--button-background-color', this.bgColor || '#52b37d'))
+//  console.log(this.el.style.setProperty('--button-color-highlight', '#52b37d'))
+//  console.log(this.el.style.setProperty('--button-border-highlight', this.bgColor || '#52b37d'))
+//  console.log( this.el.style.setProperty('--button-background-highlight', this.bgHighlight || '#fff'))
  
   if(this.icon){
     if(this.iconPosition === 'right'){
@@ -38,7 +39,7 @@ render() {
     if(this.buttonTag === 'a'){
       btn = <a href={this.buttonLink} title={this.title}>{buttonContent}</a>
     }else{
-      btn= <button title={this.title}>{buttonContent}</button>;
+      btn= <button title={this.title}>{buttonContent}<slot name="icon"></slot></button>;
 
     }
     return btn

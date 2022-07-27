@@ -1,0 +1,98 @@
+:host {
+    --close-x: #000000;
+    --close-bg: #ffffff;
+    display: grid;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+   /*  background: rgba(0,0,0,0.75); */
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    place-content:center;
+    
+}
+::slotted([slot=container]){
+    max-width: 90vw;
+    max-height: 80vh;
+    // overflow: scroll;
+}
+.overlay{
+    display: block;
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vh;
+    height: 100vh;
+    fill: rgba(0,0,0,0.75); 
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    place-content:center; 
+    --svg-height: 100vh;
+    --svg-width: 100vw;
+    --backdrop-fill: rgba(0,0,0,0.7);
+}
+#modal {
+    z-index: 100;
+    background: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+    padding: 15px;
+    transition: all .4s ease-out;
+    transform: translateY(-25px);
+    max-width: 86vw;
+}
+:host([opened]) #modal,
+:host([opened]) .modal-close{
+    transform: translateY(0);
+}
+:host([opened]),
+:host([opened]) #backdrop,
+:host([opened]) #modal,
+:host([opened]) .overlay,
+:host([opened]) .modal-close{
+    opacity: 1;
+    pointer-events: all;
+
+}
+
+#close-btn{
+    background: transparent;
+    border: none;
+}
+#close-btn svg-component{
+    --path-stroke: #fff;
+    --svg-height: 40px;
+    --svg-width: 40px;
+}
+.modal-close{
+    position: relative;
+    top:0;
+    left: 95%;
+    justify-self: baseline;
+    align-self: end;
+    cursor: pointer;
+    z-index: 101;
+    transition: all .4s ease-out;
+    transform: translateY(-25px);
+    opacity: 0;
+    -webkit-transform: translateY(-25px);
+    -moz-transform: translateY(-25px);
+    -ms-transform: translateY(-25px);
+    -o-transform: translateY(-25px);
+}
+
+.bg{
+    fill: var(--close-bg);
+}
+.x{
+    fill: var(--close-x);
+}
+::slotted(*){
+    max-height: 90vh;
+}
